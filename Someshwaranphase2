@@ -1,0 +1,40 @@
+class SmartWaterFountain:
+    def __init__(self):
+        self.water_temperature = 20  # Initial temperature in Celsius
+        self.water_flow = 0  # Initial water flow rate in liters per minute
+
+    def set_temperature(self, temperature):
+        self.water_temperature = temperature
+        print(f"Water temperature set to {self.water_temperature}°C")
+
+    def set_flow_rate(self, flow_rate):
+        self.water_flow = flow_rate
+        print(f"Water flow rate set to {self.water_flow} L/min")
+
+    def dispense_water(self):
+        print(f"Dispensing water at {self.water_temperature}°C and {self.water_flow} L/min")
+
+# Simulation
+if __name__ == "__main__":
+    fountain = SmartWaterFountain()
+
+    while True:
+        print("Select an option:")
+        print("1. Set water temperature")
+        print("2. Set water flow rate")
+        print("3. Dispense water")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            temperature = float(input("Enter water temperature (in °C): "))
+            fountain.set_temperature(temperature)
+        elif choice == "2":
+            flow_rate = float(input("Enter water flow rate (in L/min): "))
+            fountain.set_flow_rate(flow_rate)
+        elif choice == "3":
+            fountain.dispense_water()
+        elif choice == "4":
+            break
+        else:
+            print("Invalid choice. Please try again.")
